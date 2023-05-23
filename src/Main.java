@@ -7,10 +7,15 @@ public class Main {
 		d.shuffle();
 		ArrayList<Card> P1=new ArrayList<>();
 		ArrayList<Card> P2=new ArrayList<>();
+		ArrayList<Card> P3=new ArrayList<>();
+		ArrayList<Card> P4=new ArrayList<>();
 		
-		for (int x=0;x<5;x++) {
+		for (int x=0;x<8;x++) {
 			P1.add(d.deal());
 			P2.add(d.deal());
+			P3.add(d.deal());
+			P4.add(d.deal());
+
 		}
 		System.out.println();
 	}
