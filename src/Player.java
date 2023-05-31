@@ -1,30 +1,23 @@
 import java.util.*;
 
 public class Player {
-	String hand;
+	Scanner in = new Scanner(System.in);
+
 	ArrayList<Card> player = new ArrayList<>();
-	
-	
-	public Player (String hand1, ArrayList<Card> player1) {
-		hand = hand1;
+	Deck d = new Deck();
+
+	// player object
+	public Player(ArrayList<Card> player1) {
 		player = player1;
-		
+
 	}
-	
-	ArrayList<Card> deal() {
-		for (int x = 0; x < 8; x++) {
-			player.add(d.deal());
-		}
-		return player;
-		
-	}
-	
-	String getHand() {
-		for (int x = 0; x < player.size(); x++) {
-			
-		}
-	return hand;
-	}
-	
+
+	//
+//	public String toString() {
+//		return this.hand;
+//	}
+
+	//
+
 
 }

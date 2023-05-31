@@ -6,25 +6,58 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		Deck d = new Deck();
 		d.shuffle();
-		ArrayList<Card> Player = new ArrayList<>();
+		ArrayList<Card> P1 = new ArrayList<>();
 		ArrayList<Card> P2 = new ArrayList<>();
 		ArrayList<Card> P3 = new ArrayList<>();
 		ArrayList<Card> P4 = new ArrayList<>();
+		ArrayList<Card> cards = new ArrayList<>();
+		int turn = 1;
+		boolean round = true;
 
 		for (int x = 0; x < 8; x++) {
-			Player.add(d.deal());
+			P1.add(d.deal());
 			P2.add(d.deal());
 			P3.add(d.deal());
 			P4.add(d.deal());
 
 		}
 
+		for (int x = 0; x < 8; x++) {
+			P1.get(x).getName();
+			P2.get(x).getName();
+			P3.get(x).getName();
+			P4.get(x).getName();
+		}
+
 		System.out.println("Welcome to crazy 8s");
 		System.out.println("the cards have been shuffled");
-		System.out.println("you have "++" in your hand");
+		System.out.println("you have " + P1 + " in your hand");
+		System.out.println("You go first");
 
+		While (round == true){
+		if (turn == 2 || turn == 3 || turn == 4) {
+			int player = 2;
+
+			System.out.println("the top card has been flipped to reveal" + cards + "");
+
+			System.out.println("P" + player + " played...");
+			if (turn < 4) {
+				turn++;
+				player++;
+			} else {
+				turn = 1;
+			}
+
+		} else if (turn == 1) {
+			System.out.println("the top card has been flipped to reveal" + cards + "");
+			System.out.println("What card would you like to play?");
+
+		}
+		}
 	}
 
-	}
+	private static void While(boolean b) {
+		// TODO Auto-generated method stub
 
+	}
 }
