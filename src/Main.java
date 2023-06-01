@@ -12,7 +12,8 @@ public class Main {
 		ArrayList<Card> P4 = new ArrayList<>();
 		ArrayList<Card> cards = new ArrayList<>();
 		int turn = 1;
-		boolean round = true;
+		int round = 1;
+		int player = 2;
 
 		for (int x = 0; x < 8; x++) {
 			P1.add(d.deal());
@@ -30,34 +31,53 @@ public class Main {
 		}
 
 		System.out.println("Welcome to crazy 8s");
-		System.out.println("the cards have been shuffled");
-		System.out.println("you have " + P1 + " in your hand");
-		System.out.println("You go first");
+		System.out.println("how many rounds would you like to play?");
+		int rouNum = in.nextInt();
 
-		While (round == true){
-		if (turn == 2 || turn == 3 || turn == 4) {
-			int player = 2;
+		if (round <= rouNum) {
 
+			System.out.println("the cards have been shuffled");
 			System.out.println("the top card has been flipped to reveal" + cards + "");
+			System.out.println("You go first");
 
-			System.out.println("P" + player + " played...");
-			if (turn < 4) {
-				turn++;
-				player++;
-			} else {
-				turn = 1;
+			if (turn == 2 || turn == 3 || turn == 4) {
+
+				System.out.println("P" + player + " played...");
+				if (turn < 4) {
+					turn++;
+					player++;
+				} else {
+					turn = 1;
+					player = 2;
+				}
+
+			} else if (turn == 1) {
+				System.out.println("you have " + P1 + " in your hand");
+				boolean correct = true;
+
+				while (correct) {
+					System.out.println("What card would you like to play? (please select the number position of your card)");
+					int carChoice = in.nextInt();
+
+					if (P1.get(carChoice-1).getSuit() == cards.get(0).getSuit() || P1.get(carChoice-1).getNumber() == cards.get(0).getNumber()) {
+						System.out.println("You put" + P1.get(carChoice) + "");
+						
+						correct = false;
+						
+					} else {
+						System.out.println("you caan't put that card pick another");
+						
+					}
+
+					turn++;
+				}
 			}
 
-		} else if (turn == 1) {
-			System.out.println("the top card has been flipped to reveal" + cards + "");
-			System.out.println("What card would you like to play?");
+			round++;
 
-		}
+		} else if (round > rouNum) {
+			System.out.println("Thank you for playing!");
 		}
 	}
 
-	private static void While(boolean b) {
-		// TODO Auto-generated method stub
-
-	}
 }
