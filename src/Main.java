@@ -10,10 +10,12 @@ public class Main {
 		ArrayList<Card> P2 = new ArrayList<>();
 		ArrayList<Card> P3 = new ArrayList<>();
 		ArrayList<Card> P4 = new ArrayList<>();
-		ArrayList<Card> cards = new ArrayList<>();
+		ArrayList<Card> discard = new ArrayList<>();
+
 		int turn = 1;
 		int round = 1;
 		int player = 2;
+		int pos = 0;
 
 		for (int x = 0; x < 8; x++) {
 			P1.add(d.deal());
@@ -37,12 +39,16 @@ public class Main {
 		if (round <= rouNum) {
 
 			System.out.println("the cards have been shuffled");
-			System.out.println("the top card has been flipped to reveal" + cards + "");
+
+			discard.add(d.deal());
+
+			System.out.println("the top card has been flipped to reveal " + d.getName(pos) + "");
 			System.out.println("You go first");
 
-			if (turn == 2 || turn == 3 || turn == 4) {
+			if (turn > 1) {
+				
 
-				System.out.println("P" + player + " played...");
+				System.out.println("P" + player + " played... ");
 				if (turn < 4) {
 					turn++;
 					player++;
@@ -56,20 +62,24 @@ public class Main {
 				boolean correct = true;
 
 				while (correct) {
-					System.out.println("What card would you like to play? (please select the number position of your card)");
+					System.out.println(
+							"What card would you like to play? (please select the number position of your card)");
 					int carChoice = in.nextInt();
+					carChoice--;
 
-					if (P1.get(carChoice-1).getSuit() == cards.get(0).getSuit() || P1.get(carChoice-1).getNumber() == cards.get(0).getNumber()) {
-						System.out.println("You put" + P1.get(carChoice) + "");
+					if (P1.get(carChoice).getSuit() == discard.get(0).getSuit() || P1.get(carChoice).getNumber() == discard.get(0).getNumber()) {
 						
+						discard.add(P1.get(carChoice));
+						
+						System.out.println("You put " + discard.get(discard) + "");
+
+						turn++;
 						correct = false;
-						
 					} else {
-						System.out.println("you caan't put that card pick another");
-						
+						System.out.println("you can't put that card pick another");
+
 					}
 
-					turn++;
 				}
 			}
 
