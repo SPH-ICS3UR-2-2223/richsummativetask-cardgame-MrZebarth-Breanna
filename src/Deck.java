@@ -33,10 +33,19 @@ public class Deck {
 		}
 	}
 	
+	/**
+	 * gets the name and the position of the card
+	 * @param pos
+	 * @return
+	 */
 	public String getName(int pos) {
 		return cards.get(pos).getName();
 	}
 	
+	/**
+	 * deals a card from the deck
+	 * @return
+	 */
 	public Card deal() {
 		return cards.remove(0);
 	}

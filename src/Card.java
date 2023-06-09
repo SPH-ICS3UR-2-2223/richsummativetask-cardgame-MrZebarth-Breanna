@@ -45,43 +45,44 @@ public class Card {
 
 	}
 
+	/**
+	 * gets the name of the card
+	 */
 	@Override
 	public String toString() {
 		return "" + name + "";
 	}
 
+	/**
+	 * returns the number of the card
+	 * @return
+	 */
 	public int getNumber() {
 		return number;
 	}
-	
-//	public void setSuit(String suit) {
-//	this.suit = suit;
-//}
 
-public String getName() {
-	return name;
-}
+	/**
+	 * returns the name of the card
+	 * @return
+	 */
+	public String getName() {
+		return name;
+	}
 
-
-//	public void setSuit(String suit) {
-//	this.suit = suit;
-//}
-
+	/**
+	 * gets the suit of the card
+	 * @param suit
+	 */
 	public void setSuit(String suit) {
 		this.suit = suit;
 	}
-
-//
-//	public void setNumber(int number) {
-//		this.number = number;
-//	}
-
+	
+	/**
+	 * returns the suit of the card
+	 * @return
+	 */
 	public String getSuit() {
 		return suit;
 	}
-
-//	public void setName(String name) {
-//		this.name = name;
-//	}
 
 }
